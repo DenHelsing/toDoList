@@ -12,40 +12,39 @@
 
 .item-add-form input::placeholder{
     text-align: center;
-}
-
-
-
-.item-add-form>input.red::placeholder{
-    color: red;
-    opacity: 0;
-    transition: 3s;
-    /* animation: textChanging 2s infinite alternate; */
-}
-
-.item-add-form>input.grey::placeholder{
-    color: grey;
-    /* transform: scale(0.75); */
-    transition: 3s;
+    opacity: 1;
+    transition: opacity 1s;
 }
 
 .item-add-form input:focus::placeholder{
     opacity: 0;
-    transition: 2s;
+    transition: 1s;
 }
 
-@keyframes colorChange {
-    0% {background-color: blue;}
-    100% {background-color: black}
+.item-add-form input.red{
+    animation: textChanging 1s linear normal;
+}
+
+.item-add-form input.grey{
+    animation: textChangingBack 1s linear normal;
+    }
+
+.item-add-form>input.red::placeholder{
+    color: red;
+}
+
+.item-add-form>input.grey::placeholder{
+    color: grey;
 }
 
 @keyframes textChanging{
-    /* 0% {transform: scale(0)} */
-    /* 100% {transform: scale(1)} */
-    /* 0% {font-size: 5px;}
-    100% {font-size: 15px;} */
-    0% {color: red;}
-    100% {color: black;}
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes textChangingBack{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
 
 @media screen and (max-width:899px){

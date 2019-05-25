@@ -31,8 +31,18 @@ export default class ItemAddForm extends Component{
             this.setState({
                 placeholder : "Enter smth!!!",
                 txtColor: "red"
-            })
+            }, () => this.makePlaceholdeColorBack())
         }
+    }
+
+    makePlaceholdeColorBack = () => {
+        setTimeout(() => {this.setState({
+            placeholder : "Input a new item",
+            txtColor : "grey"  
+        })}
+        ,
+        5000
+        )
     }
 
     render(){

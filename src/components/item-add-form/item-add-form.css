@@ -1,0 +1,19 @@
+.item-add-form{
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.item-add-form input {
+    margin-right: 10px;
+    display: inline-block;
+    width: 80%;
+}
+
+.item-add-form>input.red::placeholder{
+    color: red;
+}
+
+.item-add-form>input.grey::placeholder{
+    color: grey;
+}

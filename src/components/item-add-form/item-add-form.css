@@ -7,7 +7,7 @@
 .item-add-form input {
     margin-right: 10px;
     display: inline-block;
-    width: 80%;
+    width: 70%;
 }
 
 .item-add-form input::placeholder{
@@ -37,6 +37,11 @@
     color: grey;
 }
 
+.item-add-form button{
+    width: 25%;
+    margin: 10px 0;
+}
+
 @keyframes textChanging{
     0% {opacity: 0;}
     100% {opacity: 1;}
@@ -47,7 +52,7 @@
     100% {opacity: 1;}
 }
 
-@media screen and (max-width:899px){
+@media screen and (max-width:949px){
     .item-add-form{
         display: flex;
         flex-direction: column;

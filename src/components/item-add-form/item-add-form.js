@@ -17,21 +17,43 @@ export default class ItemAddForm extends Component{
         })
     }
 
+    checkInput = () => {
+        const {label} = this.state;
+        
+    }
+
     onSubmit = (e) => {
+        const {label} =this.state;
         e.preventDefault();
-        if(this.state.label !== ""){
-            this.props.onAdding(this.state.label);
+        
+        // this.checkInput()
+        
+
+        if(label.split(" ").filter((el) => el.length >= 15).length !== 0){
+            console.log(label.split(" ").filter((el) => el.length >= 15).length)
+            this.setState({
+                label : "",
+                placeholder : "Incorrect input",
+                txtColor: "red"
+            }
+            , () => {this.makePlaceholdeColorBack()}
+            )
+        }
+        else if(label === ""){
+            console.log(label.length)
+            this.setState({
+                placeholder : "Enter smth!!!",
+                txtColor: "red"
+            }, () => {this.makePlaceholdeColorBack()})
+        }
+        // console.log(this.state.txtColor)
+        else{
+            this.props.onAdding(label);
             this.setState({
                 label : "",
                 placeholder : "Input a new item",
                 txtColor : "grey"              
             })
-        }
-        else{
-            this.setState({
-                placeholder : "Enter smth!!!",
-                txtColor: "red"
-            }, () => this.makePlaceholdeColorBack())
         }
     }
 
